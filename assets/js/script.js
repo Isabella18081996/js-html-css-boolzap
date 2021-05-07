@@ -12,6 +12,7 @@ const app = new Vue({
             {
                 name: 'Michele',
                 avatar: '_1',
+                img: 'assets/img/avatar_1.jpg',
                 visible: true,
                 messages: [
                     {
@@ -34,6 +35,7 @@ const app = new Vue({
             {
                 name: 'Fabio',
                 avatar: '_2',
+                img: 'assets/img/avatar_2.jpg',
                 visible: true,
                 messages: [
                     {
@@ -56,6 +58,7 @@ const app = new Vue({
             {
                 name: 'Samuele',
                 avatar: '_3',
+                img: 'assets/img/avatar_3.jpg',
                 visible: true,
                 messages: [
                     {
@@ -78,6 +81,7 @@ const app = new Vue({
             {
                 name: 'Luisa',
                 avatar: '_4',
+                img: 'assets/img/avatar_4.jpg',
                 visible: true,
                 messages: [
                     {
@@ -104,4 +108,4 @@ const app = new Vue({
 
 
 
-}),
+});

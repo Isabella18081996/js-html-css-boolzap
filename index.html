@@ -52,24 +52,10 @@
                 </div>
                 <div class="lista-contatti">
                     <ul>
-                        <li>
-                            <img src="assets/img/avatar_1.jpg" alt="">
-                            <span>Michele</span>
-                        </li>
-
-                        <li>
-                            <img src="assets/img/avatar_2.jpg" alt="">
-                            <span>Fabio</span>
-                        </li>
-
-                        <li>
-                            <img src="assets/img/avatar_3.jpg" alt="">
-                            <span>Samuele</span>
-                        </li>
-
-                        <li>
-                            <img src="assets/img/avatar_4.jpg" alt="">
-                            <span>Luisa</span>
+                        <li 
+                          v-for="contact in contacts">
+                            <img :src="contact.img" alt="">
+                            <span>{{contact.name}}</span>
                         </li>
                     </ul>
                 </div>
@@ -107,7 +93,7 @@
                       <span>10/01/2020 15:30:55</span>
                       <i class="fas fa-chevron-down"></i>
                     </div>
-                    <!-- <div class="msg sent">
+<!--                     <div class="msg sent">
                         <p>Sono le 11</p>
                         <span>58584745757</span>
                         <i class="fas fa-chevron-down"></i>
