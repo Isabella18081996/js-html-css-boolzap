@@ -7,6 +7,10 @@ const app = new Vue({
     el: '#app',
     data:{
 
+        user:{
+            name: 'Nome utente',
+            avatar: '_io'
+          },
         contacts: [
             {
                 name: 'Michele',
@@ -92,11 +96,9 @@ const app = new Vue({
                 ],
             },
         ],
-
         utenteAttivo:0,
         strMes: '',
-        now:dayjs().format('DD/MM/YYYY HH:mm:ss'),
-        strSearch: '',
+        now:dayjs().format('DD/MM/YYYY HH:mm:ss')
         
 
 
@@ -104,7 +106,6 @@ const app = new Vue({
 
     },
     methods:{
-
         sendMessage(){
             this.contacts[this.utenteAttivo].messages.push({
                 date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
@@ -115,14 +116,30 @@ const app = new Vue({
             setTimeout(()=>{
                 this.contacts[this.utenteAttivo].messages.push({
                     date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
-                    text: 'ok',
+                    text: 'Ok',
                     status: 'received'
                 });  
             },1000)
             
         },
 
-        searchContact(){
+        lastAccess(index){
+            let contactMess  =  this.contacts[index].messages;
+            return contactMess[contactMess.length-1].date;
+          },
+
+          lastMessage(index){
+            let contactMess  =  this.contacts[index].messages;
+            if(contactMess[contactMess.length-1].text.length > 20){
+
+              let splicedMess = contactMess[contactMess.length-1].text.slice(0, 20) + "...";
+              return splicedMess;
+            }
+            
+            return contactMess[contactMess.length-1].text;
+          },
+
+          searchContact(){
             let newContacts = this.contacts.filter((object) => {
 
                 if(!object.name.toLowerCase().includes(this.strSearch.toLowerCase())){
@@ -136,13 +153,11 @@ const app = new Vue({
             
             })
         }
-                
-    }
-     
+    },
+    mounted(){
 
     
-
-
-
+    }
+     
 
 });

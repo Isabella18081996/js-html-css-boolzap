@@ -20,8 +20,8 @@
         <aside class="left">
             <header>
                 <div class="profilo">
-                    <img src="assets/img/avatar_io.jpg" alt="avatar_io">
-                    <span>Nome Utente</span>
+                    <img :src="'assets/img/avatar'+ user.avatar +'.jpg'" alt="">
+                    <span>{{ user.name }}</span>
                 </div>
 
                 <div class="profilo-bar">
@@ -51,16 +51,25 @@
                     <input type="text" placeholder="Cerca o inizia una nuova chat">
                 </div>
                 <div class="lista-contatti">
-                    <ul>
-                        <li 
+                    
+                        <div class="contact" 
                           v-for="(contact, index) in contacts"
                           @click="utenteAttivo = index"
                           :class="(utenteAttivo === index) ? 'active' :null"
                           >
+                          <div class="contact-logo">
                             <img :src="'assets/img/avatar'+ contact.avatar +'.jpg'" alt="">
-                            <span>{{contact.name}}</span>
-                        </li>
-                    </ul>
+                           </div> 
+                            <!-- <span>{{contact.name}}</span> -->
+                            <div class="contact-info">
+                                <h3>
+                                    <span class="contact-name">{{ contact.name }}</span>
+                                    <span class="time f-right">{{ lastAccess(index)  }}</span>
+                                </h3>
+                                <small>{{ lastMessage(index)  }}</small>
+                            </div>
+                        </div>
+                    
                 </div>
 
             </section>

@@ -20,8 +20,8 @@
         <aside class="left">
             <header>
                 <div class="profilo">
-                    <img src="assets/img/avatar_io.jpg" alt="avatar_io">
-                    <span>Nome Utente</span>
+                    <img :src="'assets/img/avatar'+ user.avatar +'.jpg'" alt="">
+                    <span>{{ user.name }}</span>
                 </div>
 
                 <div class="profilo-bar">
@@ -50,21 +50,29 @@
                     <i class="fas fa-search"></i>
                     <input type="text" placeholder="Cerca o inizia una nuova chat"
                     v-model.trim = "strSearch"
-                    @keyup = "searchContact"
-                    >
+                    @keyup = "searchContact">
                 </div>
                 <div class="lista-contatti">
-                    <ul>
-                        <li 
+                    
+                        <div class="contact" 
                           v-for="(contact, index) in contacts"
                           @click="utenteAttivo = index"
                           :class="(utenteAttivo === index) ? 'active' :null"
                           v-if="contact.visible === true"
                           >
+                          <div class="contact-logo">
                             <img :src="'assets/img/avatar'+ contact.avatar +'.jpg'" alt="">
-                            <span>{{contact.name}}</span>
-                        </li>
-                    </ul>
+                           </div> 
+                            <!-- <span>{{contact.name}}</span> -->
+                            <div class="contact-info">
+                                <h3>
+                                    <span class="contact-name">{{ contact.name }}</span>
+                                    <span class="time f-right">{{ lastAccess(index)  }}</span>
+                                </h3>
+                                <small>{{ lastMessage(index)  }}</small>
+                            </div>
+                        </div>
+                    
                 </div>
 
             </section>
@@ -109,7 +117,7 @@
             <footer>
                 <i class="far fa-smile"></i>
                 <input type="text" placeholder="Scrivi un messaggio"
-                v-model="strMes"
+                v-model.trim="strMes"
                 @keyup.enter="sendMessage"
                 >
                 <i class="fas fa-microphone"></i>
