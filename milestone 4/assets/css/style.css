@@ -1,0 +1,349 @@
+/* GENERALI */
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, 
+    #249688 0px, 
+    #249688 15vh,
+    #D9DBD4 15vh, 
+    #D9DBD4 100vh);
+    font-weight: bolder;
+}
+
+
+.container .left, .container .right{
+float: left;
+height: 100%;
+}
+
+/* SITO GENERALI */
+
+.container{
+    width: 80%;
+    min-width: 900px;
+    height: 95%;
+    /* background-color: white; */
+}
+
+.container aside{
+    width: 35%;
+    height: 100%;
+    background-color: #FAFAFA;
+}
+
+.container main{
+    width: 65%;
+    height: 100%;
+}
+
+/* ---------------------------------------------------------- */
+/* MAIN DETTAGLIATO */
+
+.container main header, .container main footer{
+    height: 70px;
+    border-left: 1px solid #D8D8D8; 
+}
+
+/* HEADER */
+/* .container main header{
+    background-color: #EAEAEA;
+} */
+
+.container main header{
+    background-color: #EAEAEA;
+
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #EAEAEA;
+}
+
+.container main header .profilo{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.container main header .profilo img{
+    width: 10%;
+    border-radius: 50%;
+}
+
+.container main header .accesso-scritte{
+    font-size: 14px;
+    margin-left: 20px;
+}
+
+
+.container main header .profilo-bar{
+    width: 60%;
+/*     display: flex;
+    align-items: center;
+    justify-content: space-around; */
+    text-align: right;
+    margin-right: 0;
+    color: #B1B1B1 ;
+    font-size: 20px;
+}
+
+.container main header .profilo-bar i{
+    padding: 12px;
+}
+
+/* SECTION*/
+
+.container main section{
+    height: calc(100% - 140px);
+    padding: 40px 62px;
+    background-image: url(../img/mine.jpg);
+    border-right: 12px solid white;
+    overflow: auto;
+}
+
+.mess-container{
+    width: 100%;
+    clear: both;
+}
+  
+.mess{
+    position: relative;
+    min-width: 30%;
+    max-width: 70%;
+    padding: 20px 10px;
+    padding-right: 30px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+  
+.mess p{
+    font-size: 15px;
+}
+
+.mess span{
+    font-size: 10px;
+    color: gray;
+    position: absolute;
+    right: 5px;
+    bottom: 2px;
+}
+  
+.sent{
+    background-color: rgb(167, 255, 167);
+    float: right;
+    clear: both;
+}
+  
+.received{
+    background-color: white;
+    float: left;
+    clear: both;
+}
+  
+.mess i{
+    visibility: hidden;
+    position: absolute; 
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);  
+}
+
+div.mess:hover i{
+    visibility: visible;
+}
+
+
+/* FOOTER */
+.container main footer{
+    background-color: #F3EEEA ;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container main footer i{
+        display: flex;
+        align-items: center;
+        height: 100%;
+        margin-left: 40px;
+        margin-right: 40px;
+        color: #6C7375 ;
+        font-size: 25px;
+}
+
+.container main footer input{
+    height: 50px;
+    width: 75%;
+    font-size: 13px;
+    color: #6C7375;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    padding-left: 10px;
+    
+}
+
+/* -------------------------------------------------- */
+/* ASIDE DETTAGLIATO */
+
+/* HEADER */
+
+.container aside header{
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #EAEAEA;
+}
+
+.container aside header .profilo{
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.container aside header .profilo .accesso-scritte span:last-child{
+    font-size: 12px ;
+}
+
+.container aside header .profilo img{
+    width: 16%;
+    border-radius: 50%;
+}
+
+.container aside header .profilo span{
+    font-size: 15px;
+}
+
+.container aside header .profilo-bar{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #B1B1B1 ;
+    font-size: 20px;
+}
+
+/* NOTIFICHE */
+ .container aside .notifiche{
+     height: 72px;
+     background-color: #8EDAFC ;
+     display: flex;
+     align-items: center;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+
+ }
+
+ .container aside .notifiche .bell{
+    background-color: #FFFFFF;
+    color:#8EDAFC ;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-left: 15px;
+    
+ }
+
+ .container aside .notifiche .notifiche-testo{
+     font-size: 13px;
+ }
+
+ .container aside .notifiche .notifiche-testo p{
+    font-size: 13px;
+}
+
+.container aside .notifiche .notifiche-testo a{
+    font-size: 12px;
+    color:#578194 ;
+}
+ /* SECTION */
+ /* BOX-INPUT */
+
+ .container aside section{
+     height: calc(100% - 150px);
+     background-color: #FAFAFA;
+ }
+
+ .container aside section .box-input{
+     width: 97%;
+     height: 30px;
+     margin: 5px auto;
+     background-color: white;
+     border-radius: 2px;
+ }
+
+ .container aside section .box-input i{
+     width: 12%;
+     margin-left: 20px;
+     /* margin-right: 25px; */
+     height: 30px;
+     line-height: 30px;
+     color: #B6B9BB;
+ }
+
+ .container aside section .box-input input{
+     width: 70%;
+     padding: 7px;
+     /* background-color: red; */
+     border: none;
+ }
+
+
+ /* LISTA CONTATTI  */
+
+ .container aside section .lista-contatti{
+     width: 96%;
+     height: calc(100% - 37px);
+     /* background-color: yellow; */
+     margin-top: 10px;
+     border-radius: 2px;
+     border-right: 1px solid #D8D8D8;
+     border-top: 1px solid #D8D8D8;
+     background-color: #FFFFFF;
+     overflow: auto;
+ }
+
+ .container aside section .lista-contatti ul{
+     list-style: none;
+ }
+
+ .container aside section .lista-contatti ul li{
+    padding-top: 12px;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #D8D8D8;
+ }
+
+ .container aside section .lista-contatti ul li:hover{
+     background-color: #F4F5F5;
+     cursor: pointer;
+ }
+ .container aside section .lista-contatti ul li.active{
+     background-color: #F4F5F5;
+ }
+
+ .container aside section .lista-contatti ul li:last-child{
+     border-bottom: none;
+ }
+
+ .container aside section .lista-contatti ul li img{
+    width: 13.5%;
+    border-radius: 50%;
+}
+
+.container aside section .lista-contatti ul li span{
+    font-size: 15px;
+}

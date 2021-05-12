@@ -48,7 +48,10 @@
             <section>
                 <div class="box-input">
                     <i class="fas fa-search"></i>
-                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    <input type="text" placeholder="Cerca o inizia una nuova chat"
+                    v-model.trim = "strSearch"
+                    @keyup = "searchContact"
+                    >
                 </div>
                 <div class="lista-contatti">
                     <ul>
@@ -56,6 +59,7 @@
                           v-for="(contact, index) in contacts"
                           @click="utenteAttivo = index"
                           :class="(utenteAttivo === index) ? 'active' :null"
+                          v-if="contact.visible === true"
                           >
                             <img :src="'assets/img/avatar'+ contact.avatar +'.jpg'" alt="">
                             <span>{{contact.name}}</span>
@@ -105,7 +109,7 @@
             <footer>
                 <i class="far fa-smile"></i>
                 <input type="text" placeholder="Scrivi un messaggio"
-                v-model.trim="strMes"
+                v-model="strMes"
                 @keyup.enter="sendMessage"
                 >
                 <i class="fas fa-microphone"></i>
